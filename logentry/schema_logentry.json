@@ -1,0 +1,55 @@
+{
+  "header": {
+    "name": "logentry", 	// nazwa schematu walidacyjnego kanałów logowania sytuacji awaryjnych
+    "service": "*", 		// nazwa usługi generującej komunikaty
+    "channel": "log", 	
+    "description": "jakiś opis tekstowy; dowolny",
+    "mapping": {
+      //"table": "nazwa tabeli w bazie danych"
+
+    }
+  },
+  "fields": [
+    {
+      "name": "service",
+      "description": "Nazwa usługi generującej komunikat",
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "string",
+        "nullable": false, // nazwa usługi musi być zawsze podana
+        "minlength": 3 // nazwa usługi nie może być krótsza niż 3 znaki
+      },
+      "mapping": {
+        // ???? do ustalenia
+
+      }
+    },
+     {
+      "name": "level",
+      "description": "Poziom", // trace, debug, info, warning, error, failure
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "string",
+        "nullable": false, // nazwa usługi musi być zawsze podana
+        "minlength": 4 // nazwa usługi nie może być krótsza niż 3 znaki
+      },
+      "mapping": {
+        // ???? do ustalenia
+
+      }
+    },
+    {
+      "name": "message",
+      "description": "Treść komunikatu",
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "string",
+        "nullable": false, 	// treść komunikatu musi być zawsze podana
+        "minlength": 3 		// nazwa usługi nie może być krótsza niż 3 znaki
+      }
+    }
+  ]
+}

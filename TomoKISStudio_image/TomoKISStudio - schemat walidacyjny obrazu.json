@@ -1,0 +1,136 @@
+{
+  "header": {
+    "name": "et_reconstruction",
+    "service": "TomoKISStudio",
+    "channel": "ET_Tomograms",
+    "description": "Schemat zrekonstruowanego obrazu tomograficznego TomoKISStudio",  
+    "mapping": {
+      //"table": "nazwa tabeli w bazie danych"
+    
+    }
+  },
+  "fields": [
+    {
+      "name": "mesh_id",
+      "description": "Identyfikator do odwołania o metadanych wysyłanych innym kanałem pozwalających jednoznacznie określić siatkę, na której rekonstruowano obraz",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "string",
+		"nullable": false
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "currentMeasurementFrame",
+      "description": "Przekazany numer z ramki pomiarowej dla celów identyfikacji -> pole currentFrame",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "integer",
+        "minimum": 0
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "measTimeStamp",
+      "description": "Przekazany znacznik czasowy ramki pomiarowej,której zrekonstruowany obraz jest przesyłany w tym obiekcie.",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "string",
+		"nullable": true
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "measurementsService",
+      "description": "Nazwa serwisu który dostarczył dane pomiarowe",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "string",
+		"nullable": true
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "measurementsChannel",
+      "description": "Nazwa kanału z którego pochodziły dane pomiarowe",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "string",
+		"nullable": true
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "imageType",
+      "description": "Czy obraz zorientowany na węzły -> vertex_oriented czy na simpleksy -> simplex_oriented",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "string",
+		"nullable": false
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "meshVertexCount",
+      "description": "Całkowita liczba węzłów siatki, na której rekonstruowany jest obraz",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "integer",
+        "minimum": 4
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "meshSimplexCount",
+      "description": "Całkowita liczba obiektów (simpleksów) siatki, na której rekonstruowany jest obraz",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "integer",
+        "minimum": 1
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "image",
+      "description": "Macierz wartości punktów obrazu dla ramki pomiarowej identyfikowanej przez currentMeasurementFrame i measTimeStamp. Zawsze rows == 1. W zależności od imageType columns == meshVertexCount lub meshSimplexCount",
+	  "drawable": true,
+	  "describing": false,
+      "type": {
+        "name": "matrix",
+        "minrows": 1,
+        "mincols": 1,
+        "default": 0.0,
+        "type": {
+          "name": "real"
+        }
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "sequence": {
+	"timestamp": "2019-11-12T11:22:33Z",
+	"number": 1423234,
+	"channel": "log_failure",
+	"service": "scheduler",
+	"schema": "logentry"
+  },
+  "payload": {
+    "service": "scheduler",
+	"level": "critical", 
+    "message": "Kawa się skończyła"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "header": {
+    "name": "NI_vortex_control_simulator",
+    "service": "SIMULATOR",
+    "channel": "NI_vortex_control",
+    "description": "Schemat ramki do symulacji  parametrami sterowania cyklonem ",  
+    "mapping": {
+      //"table": "nazwa tabeli w bazie danych - do ustalenia"
+    
+	  }
+	},
+  "fields": [
+    {
+      "name": "id",
+      "description": "ID eksperymentu, którego dane pomiarowe dotyczą. Do związania z metadanymi dostarczanymi innym kanałem.",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "string",
+        "nullable": true,
+        "maxlength": 1024
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+     {
+      "name": "air_flow_set",
+      "description": "Sygnał napięcia podany na zawór sterujący powietrza (0 - 24V) * 100",
+	  "drawable": true,
+	  "describing": false,
+      "type": {
+        "name": "integer",
+        "minimum": 0,
+        "maximum": 2400
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "inverter_freq_set",
+      "description": "Wymagana częstotliwość falownika pompy cieczy * 100",
+	  "drawable": true,
+	  "describing": false,
+      "type": {
+        "name": "integer",
+        "minimum": 0,
+        "maximum": 6000
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    }
+  ]
+}

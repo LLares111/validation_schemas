@@ -1,0 +1,70 @@
+{
+  "header": {
+    "name": "TimeStampsService",
+    "service": "TimeStampsServer",
+    "channel": "TimeStampsService",
+    "description": "Schemat dystrybucji znacznika czasowego",  
+    "mapping": {
+      //"table": "nazwa tabeli w bazie danych - do ustalenia"
+    
+	  }
+	},
+  "fields": [
+    {
+      "name": "id",
+      "description": "ID komunikatu",
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "integer",
+        "minimum": 1,
+        "maximum": 10000
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "ack_service",
+      "description": "Jeżeli komunikat jest odpowiedzią, to tu jest wstawiana nazwa usługi, na której komunikat odpowiadamy",
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "string",
+        "nullable": true,
+        "maxlength": 100
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "ack_id",
+      "description": "ID komunikatu, na który idzie odpowiedź, Jeśli 0, komunikat nie jest odpowiedzią",
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "integer",
+        "minimum": 0,
+        "maximum": 10000
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "local_time",
+      "description": "Czas lokalny w chwili wysyłania komunikatu; Wartość w [ms] pomniejszona o 1325406563290i64 (tj. ms od 01.01.2012 - stała Radka) przekonwertowana do string",
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "string",
+        "nullable": true,
+        "maxlength": 20
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    }
+  ]
+}

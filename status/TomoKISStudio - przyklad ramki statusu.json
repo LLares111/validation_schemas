@@ -1,0 +1,20 @@
+{
+  "sequence": {
+    "channel": "status",
+    "schema": "schema_status", 
+    "timestamp": "2019-11-12T11:22:33Z",
+    "number": 1,
+    "service": "TomoKISStudio"    
+  },
+  "payload": {
+	"service": "TomoKISStudio",
+    "publishes": [ "ET-OfflineMode", "ET3", "RocsoleET", "DeCaRT", "ET_Tomograms" ],
+    "subscribes": [ "ET-OfflineMode", "ET3", "RocsoleET", "DeCaRT", "ET_Tomograms" ],
+    "next_alive_interval": 10000,
+    "timeout": 15000
+  }
+}
+
+
+
+

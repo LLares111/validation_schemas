@@ -1,0 +1,51 @@
+{
+	"header": {
+		"name": "ccd_schema",
+		"service":"CCD",
+		"channel":"CCD_measurements",
+		"description": "dane z kamery",
+		"mapping": {
+			//"table": "CCD_measurements"
+		}
+	},
+	
+	"fields": [
+    {
+      "name": "height",
+      "description": "wysokość wiru",
+	  "drawable": true,
+	  "describing": false,
+      "type": {
+        "name": "real",
+        "minimum": 0,
+        "maximum": 200
+      },
+      "mapping": {
+        "column": "height",
+        "serialization": "tostring"
+      }
+    },
+    {
+      "name": "widths",
+      "description": "Szerokości wiru od góry do dołu co X pikseli. Pierwsza kolumna położenie Y od góry (punktu 0), druga kolumna obliczona szerokość",
+	  "drawable": true,
+	  "describing": false,
+      "type": {
+        "name": "matrix",
+        "minrows": 1,
+        "mincols": 1,
+        "maxrows": 63,
+        "maxcols": 63,
+        "default": 0.0,
+        "type": {
+          "name": "real"
+        }
+      },
+      "mapping": {
+        "column": "widths",
+        "serialization": "multiline_with_spaces"  
+      
+      }
+    }
+  ]
+ }

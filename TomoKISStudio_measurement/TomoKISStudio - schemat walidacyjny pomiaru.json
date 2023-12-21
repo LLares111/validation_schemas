@@ -1,0 +1,117 @@
+{
+  "header": {
+    "name": "et_measurements",
+    "service": "TomoKISStudio",
+    "channel": "ET-OfflineMode",
+    "description": "Schemat ramki wartości pomiarowych",  
+    "mapping": {
+      //"table": "nazwa tabeli w bazie danych"
+    
+    }
+  },
+  "fields": [
+    {
+      "name": "id",
+      "description": "ID eksperymentu, którego dane pomiarowe dotyczą. Do odwołania do metadanych dostarczonych innym kanałem.",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "string",
+        "nullable": true,
+        "maxlength": 1024
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "measurement_type",
+      "description": "Czy dane surowe (0) czy znormalizowane (1) czy kalibracyjne (2) itd",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "integer",
+        "minimum": 0,
+        "maximum": 2
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "electrodes",
+      "description": "Liczba elektrod wykorzystana w danym pomiarze",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "integer",
+        "minimum": 2,
+        "maximum": 64
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "planes",
+      "description": "Liczba płaszczyzn elektrod sensora; w trybie 3D planes zawsze = 1",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "integer",
+        "minimum": 1,
+        "maximum": 8
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "currentFrame",
+      "description": "Numer bieżącej ramki. Zawsze currentFrame < frames. Jeżeli są kolejne pomiary, to currentFrame ponownie od 0",
+	  "drawable": false,
+	  "describing": true,
+      "type": {
+        "name": "integer",
+        "minimum": 0
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "frames",
+      "description": "Całkowita liczba ramek.",
+	  "drawable": false,
+	  "describing": false,
+      "type": {
+        "name": "integer",
+        "minimum": 1
+      },
+      "mapping": {
+        // ???? do ustalenia
+      }
+    },
+    {
+      "name": "measurements",
+      "description": "Macierz wartości pomiarowych dla danej ramki pomiarowej. Dla standardowego pomiaru (dane surowe, znormalizowane) wartość rows == 1, a dla danych kalibracyjnych rows == 2",
+	  "drawable": true,
+	  "describing": false,
+      "type": {
+        "name": "matrix",
+        "minrows": 1,
+        "mincols": 1,
+        "maxcols": 2016,
+        "default": 0.0,
+        "type": {
+          "name": "real"
+        }
+      },
+      "mapping": {
+        //"column": "measurements",
+        //"serialization": "multiline_with_spaces"
+
+      }
+    }
+  ]
+}

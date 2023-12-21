@@ -1,0 +1,19 @@
+{
+   "sequence":{
+      "service":"CCD",
+      "channel":"status",
+      "schema":"schema_status",
+      "timestamp":"2020-04-28T15:42:11Z",
+      "number":1
+   },
+   "payload":{
+      "service":"CCD",
+      "publishes":[
+         "CCD_measurements"
+      ],
+      "next_alive_interval":3000,
+      "subscribes":[
+      ],
+      "timeout":20000
+   }
+}

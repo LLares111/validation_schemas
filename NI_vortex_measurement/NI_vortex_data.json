@@ -1,0 +1,17 @@
+{
+  "sequence": {
+    "timestamp": "2020-02-15T00:00:00Z",
+	  "number": 1234,
+    "channel": "NI_vortex_measurement",
+    "schema": "NI_vortex_measurement",
+    "service": "NI_CYKLON"
+    },
+  "payload": {
+    "id": "Dane testowe wiru",
+	"liquid_flow": 2000,
+    "air_flow": 1000,
+    "inverter_freq": 2000,
+    "air_flow_set":1000,
+    "inverter_freq_set": 2000
+    }
+}

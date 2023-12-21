@@ -1,0 +1,14 @@
+{
+  "sequence": {
+    "timestamp": "2020-02-15T00:00:00Z",
+	  "number": 1234,
+    "channel": "NI_vortex_control",
+    "schema": "NI_vortex_control_simulator",
+    "service": "SIMULATOR"
+    },
+  "payload": {
+    "id": "Dane testowe sterowania cyklonem",
+    "air_flow_set": 1000,
+    "inverter_freq_set": 2000
+    }
+}
